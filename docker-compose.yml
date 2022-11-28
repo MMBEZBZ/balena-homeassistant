@@ -2,6 +2,7 @@ version: '2'
 volumes:
     config:
     mosquitto:
+    image:
 services:
   homeassistant:
     build: homeassistant
@@ -27,3 +28,10 @@ services:
       - 'config:/hass-config'
     environment:
       - HC_BASEPATH=/hass-config
+  balena-hello-world:
+    build: facerec
+    restart: always
+    # ports:
+    #   - "80:80"
+    volumes:
+      - image:/face/image
