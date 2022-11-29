@@ -3,7 +3,7 @@ FROM pachyderm/opencv:arm64
 
 WORKDIR /face
 
-RUN install_packages gcc cmake libboost-context-dev libboost-dev curl libpq-dev cmake 
+RUN apt-get update && apt-get install -y gcc cmake libboost-context-dev libboost-dev curl libpq-dev cmake 
 
 COPY face/ .
 

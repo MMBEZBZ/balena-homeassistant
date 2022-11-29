@@ -28,7 +28,7 @@ services:
       - 'config:/hass-config'
     environment:
       - HC_BASEPATH=/hass-config
-  balena-hello-world:
+  Face-recognition-c:
     build: facerec
     restart: always
     # ports:
