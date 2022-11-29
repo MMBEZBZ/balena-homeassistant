@@ -9,7 +9,7 @@ COPY face/ .
 
 
 RUN mkdir build 
-RUN CD build 
+WORKDIR /face/build 
 RUN cmake .. && make -j4
 
 CMD ["./LiveFaceReco"]
