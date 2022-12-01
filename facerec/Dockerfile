@@ -1,8 +1,8 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:bullseye-build
+FROM balenalib/raspberrypi4-64-debian:bullseye-build
 # FROM debian:bullseye
 # FROM dimonds90/ubuntu_opencv4.4_cp38_runtime_armv8
 # FROM pachyderm/opencv
-LABEL org.opencontainers.image.authors="mohammedmahfood2020@gmail.com"
+# LABEL org.opencontainers.image.authors="mohammedmahfood2020@gmail.com"
 
 # WORKDIR /home/
 # COPY installOpenCV.sh .
@@ -26,14 +26,14 @@ ENV cwd="/home/"
 WORKDIR $cwd
 RUN apt-get update
 RUN apt -y install software-properties-common
-RUN apt -y install gnupg
-RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
+# RUN apt -y install gnupg
+# RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 
 
-RUN apt-get update && \
-	apt-get remove -y 
+RUN apt-get update -y
+# 	apt-get remove -y 
 
 
 RUN  apt-get -y install \
