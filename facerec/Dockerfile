@@ -32,8 +32,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 
 
-RUN apt-get update && \
-	apt-get remove -y 
+RUN apt-get update -y
+# 	apt-get remove -y 
 
 
 RUN  apt-get -y install \
