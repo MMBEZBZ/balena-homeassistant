@@ -47,7 +47,7 @@ std::vector<std::string> split(const std::string& s, char seperator)
 
 void calculateFaceDescriptorsFromDisk(Arcface & facereco,std::map<std::string,cv::Mat> & face_descriptors_map)
 {
-    const std::string project_path = PROJECT_PATH;
+    // const std::string project_path = PROJECT_PATH;
     std::string pattern_jpg = project_path + "/img/*.jpg";
 	std::vector<cv::String> image_names;
     
