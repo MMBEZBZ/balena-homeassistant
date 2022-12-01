@@ -2,7 +2,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:bullseye-build
 # FROM debian:bullseye
 # FROM dimonds90/ubuntu_opencv4.4_cp38_runtime_armv8
 # FROM pachyderm/opencv
-LABEL org.opencontainers.image.authors="mohammedmahfood2020@gmail.com"
+# LABEL org.opencontainers.image.authors="mohammedmahfood2020@gmail.com"
 
 # WORKDIR /home/
 # COPY installOpenCV.sh .
