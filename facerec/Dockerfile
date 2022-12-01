@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:bullseye-build
+FROM balenalib/raspberrypi4-64-debian:bullseye-build
 # FROM debian:bullseye
 # FROM dimonds90/ubuntu_opencv4.4_cp38_runtime_armv8
 # FROM pachyderm/opencv
