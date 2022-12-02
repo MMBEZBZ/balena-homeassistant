@@ -63,31 +63,6 @@ RUN apt install -y git
 RUN git --version
 RUN wget https://github.com/prepkg/opencv-raspberrypi/releases/latest/download/opencv_64.deb
 RUN sudo apt install -y ./opencv_64.deb
- RUN apt-get update && \
- 	apt-get remove -y \
- 	x264 libx264-dev && \
- 	apt-get install -y \
- 	build-essential \
- 	checkinstall \
- 	cmake \
-	pkg-config 
-# 	yasm \
-# 	git \
-# 	gfortran \
-# 	# libjpeg62-turbo-dev \
-#     # libjpeg-dev \
-#     libjpeg8-dev\
-# 	libjasper1 \
-# 	libpng-dev \
-# 	libtiff5-dev \
-# 	libtiff-dev \
-# 	libavcodec-dev \
-# 	libavformat-dev \
-# 	libswscale-dev \
-# 	libdc1394-22-dev \
-# 	libxine2-dev \
-# 	libv4l-dev
-
 # RUN cd /usr/include/linux && \
 # 	ln -s -f ../libv4l1-videodev.h videodev.h && \
 # 	cd $cwd
