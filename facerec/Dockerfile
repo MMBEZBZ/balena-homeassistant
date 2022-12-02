@@ -39,27 +39,28 @@ RUN apt install -y git \
     cmake \
     git \
     pkg-config \
-    libgtk-3-dev \
-    libavcodec-dev \
-    libavformat-dev \
-    libswscale-dev \
-    libv4l-dev \
-    libxvidcore-dev \
-    libx264-dev \
-    libjpeg-dev \
-    libpng-dev \
-    libtiff-dev \
-    gfortran \
-    openexr \
-    libatlas-base-dev \
-    # python3-dev \
-    # python3-numpy \
-    libtbb2 \
-    libtbb-dev \
-    libdc1394-22-dev \
-    libopenexr-dev \
-    libgstreamer-plugins-base1.0-dev \
-    libgstreamer1.0-dev
+    g++
+#     libgtk-3-dev \
+#     libavcodec-dev \
+#     libavformat-dev \
+#     libswscale-dev \
+#     libv4l-dev \
+#     libxvidcore-dev \
+#     libx264-dev \
+#     libjpeg-dev \
+#     libpng-dev \
+#     libtiff-dev \
+#     gfortran \
+#     openexr \
+#     libatlas-base-dev \
+#     # python3-dev \
+#     # python3-numpy \
+#     libtbb2 \
+#     libtbb-dev \
+#     libdc1394-22-dev \
+#     libopenexr-dev \
+#     libgstreamer-plugins-base1.0-dev \
+#     libgstreamer1.0-dev
 RUN git --version
 RUN wget https://github.com/prepkg/opencv-raspberrypi/releases/latest/download/opencv_64.deb
 RUN sudo apt install -y ./opencv_64.deb
@@ -96,8 +97,8 @@ RUN sudo apt install -y ./opencv_64.deb
 
 
 
-RUN /bin/sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
-RUN ldconfig
+# RUN /bin/sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
+# RUN ldconfig
 
 
 
