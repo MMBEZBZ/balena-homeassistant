@@ -34,7 +34,7 @@ RUN apt -y install software-properties-common
 
 RUN apt-get update -y
 # 	apt-get remove -y 
-RUN apt install -y git 
+RUN apt install -y git \
     build-essential \
     cmake \
     git \
