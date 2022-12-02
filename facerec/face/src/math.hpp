@@ -1,7 +1,7 @@
 #ifndef __MATH__HEADER__
 #define __MATH__HEADER__
 
-#include <opencv4/opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 namespace Statistics
 {
