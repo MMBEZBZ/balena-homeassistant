@@ -35,18 +35,42 @@ RUN apt -y install software-properties-common
 RUN apt-get update -y
 # 	apt-get remove -y 
 RUN apt install -y git 
-
+    build-essential \
+    cmake \
+    git \
+    pkg-config \
+    libgtk-3-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libv4l-dev \
+    libxvidcore-dev \
+    libx264-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    gfortran \
+    openexr \
+    libatlas-base-dev \
+    # python3-dev \
+    # python3-numpy \
+    libtbb2 \
+    libtbb-dev \
+    libdc1394-22-dev \
+    libopenexr-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer1.0-dev
 RUN git --version
 RUN wget https://github.com/prepkg/opencv-raspberrypi/releases/latest/download/opencv_64.deb
 RUN sudo apt install -y ./opencv_64.deb
-# RUN apt-get update && \
-# 	apt-get remove -y \
-# 	x264 libx264-dev && \
-# 	apt-get install -y \
-# 	build-essential \
-# 	checkinstall \
-# 	cmake \
-# 	pkg-config \
+ RUN apt-get update && \
+ 	apt-get remove -y \
+ 	x264 libx264-dev && \
+ 	apt-get install -y \
+ 	build-essential \
+ 	checkinstall \
+ 	cmake \
+	pkg-config 
 # 	yasm \
 # 	git \
 # 	gfortran \
