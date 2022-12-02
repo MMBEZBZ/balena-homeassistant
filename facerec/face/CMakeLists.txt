@@ -53,5 +53,6 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/include/libs/RaspberryPi4B)
 ADD_EXECUTABLE(LiveFaceReco src/main.cpp)
 
 TARGET_LINK_LIBRARIES(LiveFaceReco ${OpenCV_LIBS}  facedetect ncnn ParallelVideoCapture pthread -lstdc++fs)
+TARGET_LINK_DIRECTORIES(LiveFaceReco PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include/libs/RaspberryPi4B)
 TARGET_LINK_LIBRARIES(facedetect ${OpenCV_LIBS} ncnn)
 TARGET_INCLUDE_DIRECTORIES(LiveFaceReco PRIVATE ${OpenCV_INCLUDE_DIRS})
