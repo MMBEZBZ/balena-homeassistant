@@ -96,30 +96,6 @@ RUN sudo apt install -y ./opencv_64.deb
 
 
 
-RUN git clone https://github.com/opencv/opencv.git && \
-	cd opencv && \
-	git checkout $cvVersion && \
-	cd ..
-
-RUN git clone https://github.com/opencv/opencv_contrib.git && \
-	cd opencv_contrib && \
-	git checkout $cvVersion && \
-	cd ..
-
-RUN cd opencv && \
-	mkdir build && \
-	cd build && \
-	cmake -DCMAKE_BUILD_TYPE=RELEASE \
-	-DCMAKE_INSTALL_PREFIX=/usr/local \
-	-DINSTALL_C_EXAMPLES=ON \
-	-DWITH_TBB=ON \
-	-DWITH_V4L=ON \
-	-DWITH_QT=ON \
-	-DWITH_OPENGL=ON \
-	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
-	-DBUILD_EXAMPLES=ON .. && \
-	make -j4 && make install && \
-	cd ..
 
 RUN /bin/sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 RUN ldconfig
