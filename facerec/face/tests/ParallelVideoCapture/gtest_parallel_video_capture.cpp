@@ -1,6 +1,6 @@
 #include <iostream>
 #include <ParallelVideoCapture/parallel_video_capture.hpp>
-#include <opencv2/opencv.hpp>
+#include <opencv4/opencv2/opencv.hpp>
 #include <gtest/gtest.h>
 #include <unistd.h>
 // Demonstrate some basic assertions.
