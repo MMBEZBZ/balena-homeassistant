@@ -82,3 +82,4 @@ WORKDIR /face/build
 # RUN cmake .. && make -j4
 
 # CMD ["./LiveFaceReco"]
+CMD ["bash"]
