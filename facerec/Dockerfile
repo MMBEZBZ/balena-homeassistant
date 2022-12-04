@@ -1,17 +1,4 @@
 FROM balenalib/raspberrypi4-64-debian:bullseye-build
-# FROM debian:bullseye
-# FROM dimonds90/ubuntu_opencv4.4_cp38_runtime_armv8
-# FROM pachyderm/opencv
-# LABEL org.opencontainers.image.authors="mohammedmahfood2020@gmail.com"
-
-# WORKDIR /home/
-# COPY installOpenCV.sh .
-
-# RUN chmod +x installOpenCV.sh
-# RUN ./installOpenCV.sh
-
-
-
 
 
 # Installing openCV
@@ -26,41 +13,16 @@ ENV cwd="/home/"
 WORKDIR $cwd
 RUN apt-get update
 RUN apt -y install software-properties-common
-# RUN apt -y install gnupg
-# RUN add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
-# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
-
 
 RUN apt-get update -y
-# 	apt-get remove -y 
 RUN apt install -y git \
     build-essential \
     cmake \
     git \
     pkg-config \
     g++
-#     libgtk-3-dev \
-#     libavcodec-dev \
-#     libavformat-dev \
-#     libswscale-dev \
-#     libv4l-dev \
-#     libxvidcore-dev \
-#     libx264-dev \
-#     libjpeg-dev \
-#     libpng-dev \
-#     libtiff-dev \
-#     gfortran \
-#     openexr \
-#     libatlas-base-dev \
-#     # python3-dev \
-#     # python3-numpy \
-#     libtbb2 \
-#     libtbb-dev \
-#     libdc1394-22-dev \
-#     libopenexr-dev \
-#     libgstreamer-plugins-base1.0-dev \
-#     libgstreamer1.0-dev
+
+
 RUN git --version
 RUN wget https://github.com/prepkg/opencv-raspberrypi/releases/latest/download/opencv_64.deb
 RUN sudo apt install -y ./opencv_64.deb
@@ -117,6 +79,6 @@ COPY face/ .
 
 RUN mkdir build 
 WORKDIR /face/build 
-RUN cmake .. && make -j4
+# RUN cmake .. && make -j4
 
-CMD ["./LiveFaceReco"]
+# CMD ["./LiveFaceReco"]
